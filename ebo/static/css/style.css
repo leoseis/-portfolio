@@ -12,3 +12,18 @@
 .navbar-dark{
     background-color: rgb(25, 17, 32);
 }
+
+.circullar-image-container{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid cornflowerblue;
+}
+
+
+.circullar-image{
+    width:120%;
+    height:auto;
+    display:block;
+}
