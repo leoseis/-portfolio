@@ -30,16 +30,21 @@
 
 
 .intro{
-    color: yellowgreen;  
+    color: rgb(203, 209, 119);  
 }
 
 
 
 .name{
-    color: rgb(125, 23, 134);
+    color: whitesmoke;
 }
 
 
 body{
     background-image: url("../images/jul.PNG");
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    /* background-position: center; */
 }
+
+
