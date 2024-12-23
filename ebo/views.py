@@ -14,12 +14,12 @@ def projects (request):
         },
         {
             'title': 'Ecommerce',
-            'path': 'images/ecommerce.PNG',
+            'path': 'images/chat.PNG',
         },
 
         {
-            'title': 'Timetable Scheduler',
-            'path': 'images/timtable.PNG',
+            'title': 'NotesApp',
+            'path': 'images/note.PNG',
         },
         {
             'title': 'CRUD',
@@ -36,7 +36,7 @@ def projects (request):
         },
          {
             'title': 'Portfolio',
-            'path': 'images/portfolio.PNG',
+            'path': 'images/porto.PNG',
         },
                   {
             'title': 'Labour Hiring',
