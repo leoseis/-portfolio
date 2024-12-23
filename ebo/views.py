@@ -13,7 +13,7 @@ def projects (request):
             'path': 'images/rasoi_connect.PNG',
         },
         {
-            'title': 'Ecommerce',
+            'title': 'Chats application',
             'path': 'images/chat.PNG',
         },
 
