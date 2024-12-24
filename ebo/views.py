@@ -9,7 +9,7 @@ def about (request):
 def projects (request):
     projects_show=[
         {
-            'title': 'Rasoi Connect',
+            'title': 'EBOs Markets place ',
             'path': 'images/rasoi_connect.PNG',
         },
         {
@@ -45,4 +45,8 @@ def projects (request):
 
     ]
     return render (request,"projects.html",{"projects_show": projects_show})
+
+
+def experience(request):
+    return render(request, "experience.html")
 
