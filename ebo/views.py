@@ -47,6 +47,16 @@ def projects (request):
     return render (request,"projects.html",{"projects_show": projects_show})
 
 
+
 def experience(request):
-    return render(request, "experience.html")
+    experience=[
+        {"company":"ABC",
+         "position":"python developer"},
+        {"company":"ABC2",
+         "position":"python developer2"},
+        {"company":"ABC3",
+         "position":"python developer3"}
+    ]
+    return render (request,"experience.html",{"experience":experience})
+
 
