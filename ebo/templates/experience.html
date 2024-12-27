@@ -1,16 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content1 %}
+ {% block content1 %}
 <div class="row my-2">
-
-    {% for eachitem in experience %}
-        <div class="jumbtron jumbtron-fluid mt-2">
-            <h1 class="display4"> {{eachitem.company}} </h1>
-            <p class="lead"> {{eachitem.position}}</p>
-        </div>
-    {% endfor %}
-
-
+  {% if experience %} {% for eachitem in experience %}
+  <div class="jumbotron jumbotron-fluid mt-2">
+    <h1 class="display-4">{{ eachitem.company }}</h1>
+    <p class="lead">{{ eachitem.position }}</p>
+  </div>
+  {% endfor %} {% else %}
+  <p class="text-center">No experiences to display.</p>
+  {% endif %}
 </div>
 
 {% endblock content1 %}

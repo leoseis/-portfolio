@@ -56,3 +56,19 @@ body {
   display: block;
 }
 
+
+.jumbotron {
+  background-color:rgb(82, 206, 169);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.display4 {
+  color: rgb(17, 22, 7);
+  font-size: 24px;
+}
+
+.lead {
+  font-size: 18px;
+  color: rgb(80, 80, 7);
+}
