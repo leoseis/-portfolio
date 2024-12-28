@@ -64,3 +64,7 @@ def certification(request):
     return render(request, 'certification.html')
 
 
+def contacts(request):
+    return render (request, 'contacts.html')
+
+
