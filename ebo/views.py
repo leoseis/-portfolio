@@ -60,3 +60,7 @@ def experience(request):
     return render (request,"experience.html",{"experience":experience})
 
 
+def certification(request):
+    return render(request, 'certification.html')
+
+
