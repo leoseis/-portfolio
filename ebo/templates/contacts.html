@@ -2,7 +2,22 @@
 {% load static %}
  {% block content1 %}
 <div class="row my-2">
-  <div class="jumbotron jumbotron-fluid mt-2">
-    <h1 class="display-4">Python </h1>
+<div class="col-4 text-center my-5 text-light">
+  <h1> Stay connected </h1>
+  <h3> lee.emeliieze@gmail.com</h3>
+  <div class="col-12 d-flex justify-content-center align-items-center ">
+    <a href="https://www.linkedin.com/in/neelam-choudhary-4a93a455/" target="_blank" class="ms-3">
+      <img src="{% static 'images/linkendin.png' %}" alt="linkedin" width="50" height="50" class="social_links">
+    </a>
+
+    <a href="https://www.youtube.com/@codingUmbrella" target="_blank" class="ms-3">
+      <img src="{% static 'images/you.png' %}" alt="youtube" width="50" height="50" class="social_links">
+    </a>
+
+    <a href="instagram.com/neelam.choudhary.3785" target="_blank" class="ms-3">
+      <img src="{% static 'images/insta.jpg' %}" alt="instagram" width="50" height="50" class="social_links">
+    </a>
+  </div>
+</div>
   </div>
 {% endblock content1 %}
