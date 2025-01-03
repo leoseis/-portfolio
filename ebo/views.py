@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Contact
 from django.contrib.staticfiles.storage import staticfiles_storage
+from django.contrib import messages
+
 
 
 def home (request):
@@ -53,12 +56,16 @@ def projects (request):
 
 def experience(request):
     experience=[
-        {"company":"ABC",
-         "position":"python developer"},
-        {"company":"ABC2",
-         "position":"python developer2"},
-        {"company":"ABC3",
-         "position":"python developer3"}
+        {"company":"AD digital",
+         "position":"python developer",
+         "year":"till date" },
+         
+        {"company":"BGP",
+         "position":"Full stack Dveloper",
+         "year":"2021"},
+        {"company":"Datavise",
+         "position":"python developer3",
+         "year":"till 2019"},
     ]
     return render (request,"experience.html",{"experience":experience})
 
@@ -67,9 +74,33 @@ def certification(request):
     return render(request, 'certification.html')
 
 
-def contacts(request):
-    return render (request, 'contacts.html')
 
+
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import Contact
+
+def contacts(request):
+    if request.method == 'POST':
+        # Get data from the form
+        name = request.POST.get('name', '').strip()
+        email = request.POST.get('email', '').strip()
+        phone = request.POST.get('phone', '').strip()
+        message = request.POST.get('msg', '').strip()
+
+        # Debugging: Print the form data
+        print(f"Name: {name}, Email: {email}, Phone: {phone}, Message: {message}")
+
+        # Validate required fields
+        if name and email and message:
+            # Save data to the database
+            Contact.objects.create(name=name, email=email, phone=phone, message=message)
+            messages.success(request, "Thank you for contacting us!")
+            return redirect('contacts')  # Redirect to the same page or a 'success' page
+        else:
+            messages.error(request, "Please fill in all required fields.")
+
+    return render(request, 'contacts.html')
 
 def resume(request):
     resume_path="myapp/resume.pdf"
@@ -81,6 +112,3 @@ def resume(request):
             return response
     else:
         return HttpResponse("resume not found", status=404)
-
-
-
