@@ -1,42 +1,95 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% load static %}
- {% block content1 %}
+{% block content1 %}
 
-<div class="row my-5">
-  <div class="col-12 d-flex justify-content-center align-items-center">
-    <div class="circullar-image-container">
-      <img
-        class="circullar-image"
-        src="{% static  'images/insta.PNG' %}"
-        alt="image"
-      />
+<style>
+  .circular-image-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #0d6efd; /* Bootstrap blue */
+  box-shadow: 0 0 20px rgba(13, 110, 253, 0.4); /* soft glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.circular-image-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(13, 110, 253, 0.6);
+}
+
+.circular-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+  .intro {
+    font-size: 1.5rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+  }
+
+  .name h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #343a40;
+  }
+
+  .name h1:last-child {
+    font-size: 1.5rem;
+    color: #495057;
+  }
+
+  .social_links {
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .social_links:hover {
+    transform: scale(1.1);
+  }
+
+  @media (min-width: 768px) {
+    .name h1 {
+      font-size: 2.5rem;
+    }
+
+    .name h1:last-child {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<div class="container text-center my-5">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <div class="circular-image-container">
+        <img class="circular-image" src="{% static 'images/insta.PNG' %}" alt="Leonard Emelieze">
+      </div>
     </div>
   </div>
-</div>
-<div class="col-12 text-center mt-3">
-  <h4 class="intro"> Hi, my name is </h4>
+
+  <div class="mt-4">
+    <h4 class="intro">Hi, my name is</h4>
     <div class="name">
-      <h1> Leonard E Emelieze</h1>
-      <h1> A software Developer/Geoscienctist </h1>
+      <h1>Leonard E Emelieze</h1>
+      <h1>A Software Developer / Geoscientist</h1>
     </div>
+  </div>
 
-    <div class="col-12 text-center mt-3">
-      <div class="col-12 d-flex justify-content-center align-items-center ">
-          <a href="https://www.linkedin.com/in/leonard-emelieze-24b4089b/" target="_blank" class="ms-3">
-            <img src="{% static 'images/linkendin.png' %}" alt="linkedin" width="50" height="50" class="social_links">
-          </a>
-  
-          <a href=https://www.youtube.com/@leonardemelieze8103 target="_blank" class="ms-3">
-            <img src="{% static 'images/you.png' %}" alt="youtube" width="50" height="50" class="social_links">
-          </a>
-  
-          <a href=https://www.instagram.com/mistaa_lee_/ target="_blank" class="ms-3">
-            <img src="{% static 'images/insta.jpg' %}" alt="instagram" width="50" height="50" class="social_links">
-          </a>
-        </div>
-    </div>
-
+  <div class="mt-4 d-flex justify-content-center gap-3 flex-wrap">
+    <a href="https://www.linkedin.com/in/leonard-emelieze-24b4089b/" target="_blank">
+      <img src="{% static 'images/linkendin.png' %}" alt="LinkedIn" width="50" height="50" class="social_links">
+    </a>
+    <a href="https://www.youtube.com/@leonardemelieze8103" target="_blank">
+      <img src="{% static 'images/you.png' %}" alt="YouTube" width="50" height="50" class="social_links">
+    </a>
+    <a href="https://www.instagram.com/mistaa_lee_/" target="_blank">
+      <img src="{% static 'images/insta.jpg' %}" alt="Instagram" width="50" height="50" class="social_links">
+    </a>
+  </div>
 </div>
-
 
 {% endblock content1 %}
