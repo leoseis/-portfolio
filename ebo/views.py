@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Contact
+from .models import ContactMessage
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.contrib import messages
+from .forms import ContactForm
+
 
 
 
@@ -48,6 +50,16 @@ def projects (request):
             'title': 'Labour Hiring',
             'path': 'images\labour_hiring.PNG',
         },
+        
+        {
+          'title': ' Quizapp',
+            'path': 'images\quizapp.PNG',
+        },
+
+         {
+             'title': 'RegForm',
+            'path': 'images\registration.PNG',
+         },
 
     ]
     return render (request,"projects.html",{"projects_show": projects_show})
@@ -78,7 +90,7 @@ def certification(request):
 
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Contact
+from .models import ContactMessage
 
 def contacts(request):
     if request.method == 'POST':
@@ -94,7 +106,7 @@ def contacts(request):
         # Validate required fields
         if name and email and message:
             # Save data to the database
-            Contact.objects.create(name=name, email=email, phone=phone, message=message)
+            ContactMessage.objects.create(name=name, email=email, phone=phone, message=message)
             messages.success(request, "Thank you for contacting us!")
             return redirect('contacts')  # Redirect to the same page or a 'success' page
         else:
@@ -112,3 +124,17 @@ def resume(request):
             return response
     else:
         return HttpResponse("resume not found", status=404)
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact_success')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
+
+def contact_success_view(request):
+    return render(request, 'success.html')

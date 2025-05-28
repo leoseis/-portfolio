@@ -1,26 +1,72 @@
 {% extends "base.html" %}
 {% load static %}
- {% block content1 %}
-<div class="row my-2">
-  <div class="jumbotron jumbotron-fluid mt-2">
-    <h1 class="display-4">Python </h1>
-  </div>
-  <div class="jumbotron jumbotron-fluid mt-2">
-    <h1 class="display-4">Javascript </h1>
-  </div>
+{% block content1 %}
 
-  <div class="jumbotron jumbotron-fluid mt-2">
-    <h1 class="display-4">SQL </h1>
+<style>
+  .certification-section {
+    padding: 40px 20px;
+    background: linear-gradient(to left, #16222A, #3A6073);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  }
+
+  .certification-card {
+    background-color: #1e1e2f;
+    border-left: 6px solid #00ffff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
+  }
+
+  .certification-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #00ffff;
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+
+  .certification-org {
+    font-size: 1.1rem;
+    color: #dddddd;
+    margin-bottom: 5px;
+  }
+
+  .certification-year {
+    font-size: 0.95rem;
+    color: #bbb;
+  }
+
+  .no-certification {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ccc;
+    padding: 40px;
+  }
+</style>
+
+<div class="row my-4">
+  <div class="col-12 certification-section">
+    {% if certifications %}
+      {% for cert in certifications %}
+        <div class="certification-card">
+          <div class="certification-title">{{ cert.title }}</div>
+          <div class="certification-org">{{ cert.organization }}</div>
+          <div class="certification-year">{{ cert.year }}</div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="no-certification">No certifications to display.</p>
+    {% endif %}
   </div>
-
-  <div class="jumbotron jumbotron-fluid mt-2">
-    <h1 class="display-4">AWS </h1>
-  </div>
-
-  <div class="jumbotron jumbotron-fluid mt-2">
-    <h1 class="display-4">Web Development</h1>
-  </div>
-
-
+</div>
 
 {% endblock content1 %}
