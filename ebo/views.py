@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.staticfiles.storage import staticfiles_storage
 from .models import Contact
+from .forms import ContactForm
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def home(request):
@@ -42,20 +45,33 @@ def certification(request):
 
 def contacts(request):
     if request.method == 'POST':
-        name = request.POST.get('name', '').strip()
-        email = request.POST.get('email', '').strip()
-        phone = request.POST.get('phone', '').strip()
-        message = request.POST.get('msg', '').strip()
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            Contact.objects.create(
+                name=cd['name'],
+                email=cd['email'],
+                phone=cd['phone'],
+                message=cd['msg']
+            )
 
-        if name and email and message:
-            Contact.objects.create(name=name, email=email, phone=phone, message=message)
+            # Email Notification
+            send_mail(
+                subject=f"New Contact Message from {cd['name']}",
+                message=f"Message:\n{cd['msg']}\n\nPhone: {cd['phone']}\nEmail: {cd['email']}",
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=['your_email@example.com'],  # Replace with your email
+                fail_silently=False,
+            )
+
             messages.success(request, "Thank you for contacting us!")
             return redirect('contacts')
         else:
-            messages.error(request, "Please fill in all required fields.")
+            messages.error(request, "Please correct the errors below.")
+    else:
+        form = ContactForm()
 
-    return render(request, 'contacts.html')
-
+    return render(request, 'contacts.html', {'form': form})
 
 def resume(request):
     resume_path = "myapp/resume.pdf"
