@@ -2,10 +2,50 @@
 {% load static %}
 
 {% block content1 %}
-  {% for project in projects_show %}
-    <div class="project">
-      <h3>{{ project.title }}</h3>
-      <img src="{% static project.path %}" alt="{{ project.title }}">
-    </div>
-  {% endfor %}
+  <style>
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .project {
+      width: 200px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .project img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-title {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .project-title:hover {
+      color: #0066cc;
+      transform: scale(1.1);
+      text-shadow: 0 0 8px rgba(0, 102, 204, 0.4);
+    }
+  </style>
+
+  <div class="project-grid">
+    {% for project in projects_show %}
+      <div class="project">
+        <img src="{% static project.path %}" alt="{{ project.title }}">
+        <a href="#" class="project-title">{{ project.title }}</a>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock content1 %}
