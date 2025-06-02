@@ -1,26 +1,58 @@
 {% extends "base.html" %}
 {% load static %}
- {% block content1 %}
-<div class="row my-2">
-  <div class="jumbotron jumbotron-fluid mt-2">
-    <h1 class="display-4">Python </h1>
+
+{% block content1 %}
+  <style>
+    .skills-section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .skills-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 2rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .skill-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #007bff;
+    }
+  </style>
+
+  <div class="skills-section">
+    <h2 class="skills-title">Skills & Technologies</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card"><div class="skill-name">Python</div></div>
+      <div class="skill-card"><div class="skill-name">JavaScript</div></div>
+      <div class="skill-card"><div class="skill-name">SQL</div></div>
+      <div class="skill-card"><div class="skill-name">AWS</div></div>
+      <div class="skill-card"><div class="skill-name">Web Development</div></div>
+    </div>
   </div>
-  <div class="jumbotron jumbotron-fluid mt-2">
-    <h1 class="display-4">Javascript </h1>
-  </div>
-
-  <div class="jumbotron jumbotron-fluid mt-2">
-    <h1 class="display-4">SQL </h1>
-  </div>
-
-  <div class="jumbotron jumbotron-fluid mt-2">
-    <h1 class="display-4">AWS </h1>
-  </div>
-
-  <div class="jumbotron jumbotron-fluid mt-2">
-    <h1 class="display-4">Web Development</h1>
-  </div>
-
-
-
 {% endblock content1 %}

@@ -1,17 +1,75 @@
 {% extends "base.html" %}
 {% load static %}
- {% block content1 %}
-<div class="row my-2">
-  {% if experience %} 
-  {% for eachitem in experience %}
-  <div class="jumbotron jumbotron-fluid mt-2">
-    <h1 class="display-4">{{ eachitem.company }}</h1>
-    <p class="lead">{{ eachitem.position }}</p>
-    <p class="lead">{{ eachitem.year }}</p>
-  </div>
-  {% endfor %} {% else %}
-  <p class="text-center">No experiences to display.</p>
-  {% endif %}
-</div>
 
+{% block content1 %}
+  <style>
+    .experience-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .experience-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 2rem;
+    }
+
+    .experience-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .experience-company {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #007bff;
+      margin-bottom: 0.5rem;
+    }
+
+    .experience-position {
+      font-size: 1.1rem;
+      color: #34495e;
+      margin-bottom: 0.25rem;
+    }
+
+    .experience-year {
+      font-size: 0.95rem;
+      color: #6c757d;
+    }
+
+    .no-experience {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #999;
+      padding: 2rem 0;
+    }
+  </style>
+
+  <div class="experience-section">
+    <h2 class="experience-title">Work Experience</h2>
+
+    {% if experience %}
+      {% for eachitem in experience %}
+        <div class="experience-card">
+          <div class="experience-company">{{ eachitem.company }}</div>
+          <div class="experience-position">{{ eachitem.position }}</div>
+          <div class="experience-year">{{ eachitem.year }}</div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="no-experience">No experiences to display.</div>
+    {% endif %}
+  </div>
 {% endblock content1 %}
