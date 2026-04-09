@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0)@hvfeq3sv371p2oaw-c$&&dlmu8g*(7amc)yif5i@1%ersu9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ['localhost','127.0.0.1','.onrender.com']
 
 # Application definition
 
@@ -41,8 +41,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+   
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -121,8 +122,14 @@ USE_TZ = True
 # settings.py
 import os
 
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_URL = 'static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
 
 
 # Default primary key field type
@@ -141,12 +148,19 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.config(default=os.getenv("DATABASE_URL"))
+}
+
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "changeme")
 DEBUG = os.environ.get("DEBUG", "False") == "True"
-ALLOWED_HOSTS = [os.environ.get("ALLOWED_HOSTS", "localhost")]
-
+AALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 STATIC_URL = 'static/'
 
