@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-0)@hvfeq3sv371p2oaw-c$&&dlmu8g*(7amc)yif5i@1%ersu9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 # Application definition
 
@@ -75,14 +74,15 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import os
+import dj_database_url
+
 DATABASES = {
     "default": dj_database_url.config(
-        default="sqlite:///db.sqlite3",  # fallback
-        conn_max_age=600,
-        ssl_require=True
+        default="sqlite:///db.sqlite3",
+        conn_max_age=600
     )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -140,12 +140,18 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-import os
-import dj_database_url
-from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "changeme")
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 ALLOWED_HOSTS = [os.environ.get("ALLOWED_HOSTS", "localhost")]
+
+
+STATIC_URL = 'static/'
+
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+
+
