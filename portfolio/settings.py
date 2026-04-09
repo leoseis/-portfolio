@@ -158,11 +158,11 @@ DATABASES = {
 }
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "changeme")
-DEBUG = os.environ.get("DEBUG", "False") == "True"
-AALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+DEBUG = True
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 STATIC_URL = 'static/'
 
