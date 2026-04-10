@@ -42,7 +42,7 @@ My background in **seismic data analysis and geoscience** has strengthened my an
 
 # 📸 Screenshot
 
-![Portfolio Screenshot](static/images/ebo.jpeg)
+![Portfolio Screenshot](static/images/home.png)
 
 ---
 
