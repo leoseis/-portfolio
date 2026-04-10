@@ -1,50 +1,54 @@
-# 🌐 Leonard Emelieze Portfolio
+# 🌐 Leonard Emelieze — Developer Portfolio
 
-Welcome to my personal developer portfolio built with **Django**.  
-This website showcases my skills, projects, and experience as a **Full-Stack Python Developer and Seismologist**.
+![Portfolio Banner](static/images/ebo.jpeg)
 
-Live Site:  
-👉 https://portfolio-dwxh.onrender.com/
+Welcome to my personal portfolio website built with **Django**.  
+This project showcases my skills, projects, and experience as a **Full-Stack Python Developer and Seismologist**.
 
----
-
-## 👨‍💻 About Me
-
-I am a **Full-Stack Python Developer and Seismologist** with a strong passion for building scalable web applications and solving real-world problems using technology.
-
-My background in geoscience and seismic data analysis has strengthened my analytical thinking and problem-solving abilities, which I apply when designing software systems.
+🌍 **Live Site:**  
+https://portfolio-dwxh.onrender.com
 
 ---
 
-## 🚀 Technologies Used
+# 👨‍💻 About Me
 
-- Python
-- Django
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap
-- Git & GitHub
-- Render (Deployment)
+I am a **Full-Stack Python Developer and Seismologist** with experience building scalable web applications and solving real-world problems using technology.
+
+My background in **seismic data analysis and geoscience** has strengthened my analytical thinking and problem-solving abilities, which I apply when designing robust software systems.
 
 ---
 
-## 📂 Features
+# 🚀 Tech Stack
 
-- Responsive design
-- About section
-- Tech stack showcase
-- Social media links
-- Clean UI with Bootstrap
-- Deployed on cloud
-
----
-
-## 📸 Portfolio Preview
-
-![Portfolio Screenshot](static/images/new.PNG)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ---
 
-## ⚙️ Installation (Run Locally)
+# ✨ Features
 
+✔ Responsive portfolio design  
+✔ About & skills section  
+✔ Tech stack showcase  
+✔ Social media links  
+✔ Built with Django templates  
+✔ Deployed on cloud (Render)
+
+---
+
+# 📸 Screenshot
+
+![Portfolio Screenshot](static/images/ebo.jpeg)
+
+---
+
+# ⚙️ Installation (Run Locally)
+
+Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/portfolio.git
