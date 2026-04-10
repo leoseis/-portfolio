@@ -18,8 +18,12 @@ def about(request):
 
 def projects(request):
     projects_show = [
-        {'title': "EBO's Marketplace", 'path': 'images/rasoi_connect.PNG'},
+        
+        {'title': "Multivendor_app",'path': 'images/multi.png'},
+         {'title': 'CO2 Optimizer', 'path': 'images/co2.png'},
+        {'title': 'Portfolio', 'path': 'images/porto.PNG'},
         {'title': 'Chats Application', 'path': 'images/chat.PNG'},
+        {'title': "EBO's Marketplace", 'path': 'images/rasoi_connect.PNG'},
         {'title': 'NotesApp', 'path': 'images/note.PNG'},
         {'title': 'CRUD', 'path': 'images/CRUD.PNG'},
         {'title': 'Photo Uploader', 'path': 'images/photo_uploader.PNG'},
@@ -33,8 +37,9 @@ def projects(request):
 def experience(request):
     experience = [
         {"company": "AD Digital", "position": "Python Developer", "year": "Present"},
-        {"company": "BGP", "position": "Full Stack Developer", "year": "2021"},
-        {"company": "Datavise", "position": "Python Developer", "year": "Until 2019"},
+         {"company": "Datavise", "position": "Python Developer", "year": "Until 2019"},
+        {"company": "BGP", "position": "Seismologist", "year": "2010-2019"},
+       
     ]
     return render(request, "experience.html", {"experience": experience})
 
