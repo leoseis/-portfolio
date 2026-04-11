@@ -18,19 +18,47 @@ def about(request):
 
 def projects(request):
     projects_show = [
-        
-        {'title': "Multivendor_app",'path': 'images/multi.png'},
-         {'title': 'CO2 Optimizer', 'path': 'images/co2.png'},
-        {'title': 'Portfolio', 'path': 'images/porto.PNG'},
-        {'title': 'Chats Application', 'path': 'images/chat.PNG'},
-        {'title': "EBO's Marketplace", 'path': 'images/rasoi_connect.PNG'},
-        {'title': 'NotesApp', 'path': 'images/note.PNG'},
-        {'title': 'CRUD', 'path': 'images/CRUD.PNG'},
-        {'title': 'Photo Uploader', 'path': 'images/photo_uploader.PNG'},
-        {'title': 'To Do List', 'path': 'images/todolist.PNG'},
-        {'title': 'Portfolio', 'path': 'images/porto.PNG'},
-        {'title': 'Labour Hiring', 'path': 'images/labour_hiring.PNG'},
-    ]
+
+{'title': "Multivendor_app",
+ 'path': 'images/multi.png',
+ 'link': ' https://marketplace-connect.onrender.com/'},
+
+{'title': "CO2 Optimizer",
+ 'path': 'images/co2.png',
+ 'link': 'https://co2optimizer-sr2pucepayv3glalfrmxtv.streamlit.app/'},
+
+{'title': "Portfolio",
+ 'path': 'images/porto.PNG',
+ 'link': 'https://portfolio-dwxh.onrender.com/'},
+
+{'title': "Chats Application",
+ 'path': 'images/chat.PNG',
+ 'link': ''},
+
+{'title': "EBO's Marketplace",
+ 'path': 'images/rasoi_connect.PNG',
+ 'link': ''},
+
+{'title': "NotesApp",
+ 'path': 'images/note.PNG',
+ 'link': ''},
+
+{'title': "CRUD",
+ 'path': 'images/CRUD.PNG',
+ 'link': ''},
+
+{'title': "Photo Uploader",
+ 'path': 'images/photo_uploader.PNG',
+ 'link': ''},
+
+{'title': "To Do List",
+ 'path': 'images/todolist.PNG',
+ 'link': ''},
+
+{'title': "Labour Hiring",
+ 'path': 'images/labour_hiring.PNG',
+ 'link': ''}
+]
     return render(request, "projects.html", {"projects_show": projects_show})
 
 
