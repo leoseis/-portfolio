@@ -1,54 +1,97 @@
-# 🌐 Leonard Emelieze — Developer Portfolio
+# 👋 Hi, I'm Leonard Emelieze
 
-![Portfolio Banner](static/images/ebo.jpeg)
+🎯 **Full-Stack Python Developer | Django | React | Seismologist**
 
-Welcome to my personal portfolio website built with **Django**.  
-This project showcases my skills, projects, and experience as a **Full-Stack Python Developer and Seismologist**.
-
-🌍 **Live Site:**  
-https://portfolio-dwxh.onrender.com
+I build scalable web applications and data-driven systems that solve real-world problems.
 
 ---
 
-# 👨‍💻 About Me
+## 🚀 About Me
 
-I am a **Full-Stack Python Developer and Seismologist** with experience building scalable web applications and solving real-world problems using technology.
+I am a **Full-Stack Python Developer and Seismologist** with over 10 years of experience in geoscience and 5+ years in software development.
 
-My background in **seismic data analysis and geoscience** has strengthened my analytical thinking and problem-solving abilities, which I apply when designing robust software systems.
+I specialize in building **robust backend systems with Django and REST APIs**, and creating **interactive frontends with React**.
 
----
-
-# 🚀 Tech Stack
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
-![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+My background in seismic data analysis gives me a strong edge in:
+- Problem-solving  
+- Data interpretation  
+- System design  
 
 ---
 
-# ✨ Features
+## 🛠 Tech Stack
 
-✔ Responsive portfolio design  
-✔ About & skills section  
-✔ Tech stack showcase  
-✔ Social media links  
-✔ Built with Django templates  
-✔ Deployed on cloud (Render)
+### 💻 Backend
+- Python
+- Django
+- Django REST Framework
+
+### 🎨 Frontend
+- React
+- JavaScript
+- HTML5
+- CSS3
+- Bootstrap
+
+### 🗄 Database
+- PostgreSQL
+- SQLite
+
+### ⚙️ Tools
+- Git & GitHub
+- VS Code
+- Linux
 
 ---
 
-# 📸 Screenshot
+## 📊 GitHub Stats
 
-![Portfolio Screenshot](static/images/home.png)
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=leoseis&show_icons=true&theme=tokyonight" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=leoseis&layout=compact&theme=tokyonight" />
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=leoseis&theme=tokyonight" />
+</p>
 
 ---
 
-# ⚙️ Installation (Run Locally)
+## 📌 Featured Projects
 
-Clone the repository
+### 🛒 Multi-Vendor Ecommerce Platform
+Built with Django REST Framework and React  
+- Authentication system  
+- Product management  
+- Payment integration  
 
-```bash
-git clone https://github.com/YOUR_USERNAME/portfolio.git
+---
+
+### 🌍 Seismic Data Visualization Dashboard
+A platform for analyzing seismic datasets  
+- Data visualization  
+- Interactive dashboard  
+- Real-time insights  
+
+---
+
+### 💼 Portfolio Website
+My personal developer portfolio  
+🔗 https://portfolio-dwxh.onrender.com  
+
+---
+
+## 📫 Connect With Me
+
+- 🌐 Portfolio: https://portfolio-dwxh.onrender.com  
+- 💼 LinkedIn: (add your link)  
+- 📧 Email: (add your email)  
+
+---
+
+## ⚡ Fun Fact
+
+I combine **Geoscience + Software Engineering** to build solutions that make real-world impact 🌍
