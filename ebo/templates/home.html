@@ -1,49 +1,56 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content1 %}
+{% extends "base.html" %} {% load static %} {% block content1 %}
 
 <style>
   .circular-image-container {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 5px solid #0d6efd; /* Bootstrap blue */
-  box-shadow: 0 0 20px rgba(13, 110, 253, 0.4); /* soft glow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #0d6efd; /* Bootstrap blue */
+    box-shadow: 0 0 20px rgba(13, 110, 253, 0.4); /* soft glow */
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
 
-.circular-image-container:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(13, 110, 253, 0.6);
-}
+  .circular-image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(13, 110, 253, 0.6);
+  }
 
-.circular-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .circular-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-.mt-4 {
-  background-color: #1a1a1a;
-  padding: 40px;
-  border-radius: 15px;
-  text-align: center;
-  transition: all 0.4s ease-in-out;
-  border: 1px solid transparent;
-}
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+  }
 
-/* Hover effect with golden glow */
-.mt-4:hover {
-  border: 1px solid #d4af37;
-  box-shadow: 0 0 15px 2px rgba(212, 175, 55, 0.6);
-  transform: scale(1.02);
-}
+  .mt-4 {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid transparent;
+  }
 
-.mt-4:hover h1,
-.mt-4:hover h4 {
-  color: #f1c40f; /* Brighter gold on hover */
-}
+  /* Hover effect with golden glow */
+  .mt-4:hover {
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 15px 2px rgba(212, 175, 55, 0.6);
+    transform: scale(1.02);
+  }
+
+  .mt-4:hover h1,
+  .mt-4:hover h4 {
+    color: #f1c40f; /* Brighter gold on hover */
+  }
 
   .intro {
     font-size: 1.5rem;
@@ -62,13 +69,50 @@
     color: #495057;
   }
 
-  .tagline{
-    max-width:700px;
-    margin:15px auto;
-    font-size:1.2rem;
-    line-height:1.6;
-    color:#dcdcdc;
-}
+  .tagline {
+    max-width: 700px;
+    margin: 15px auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #dcdcdc;
+  }
+
+  .hero-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: #d4af37;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: #f1c40f;
+    color: black;
+  }
+
+  .btn-secondary {
+    background: #0d6efd;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .btn-secondary:hover {
+    background: #0b5ed7;
+  }
 
   .social_links {
     transition: transform 0.3s ease;
@@ -80,9 +124,14 @@
     transform: scale(1.1);
   }
 
-  @media (min-width: 768px) {
-    .name h1 {
-      font-size: 2.5rem;
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 60vh;
+    }
+
+    .hero img {
+      width: 180px;
+      height: 180px;
     }
 
     .name h1:last-child {
@@ -91,33 +140,88 @@
   }
 </style>
 
-<div class="container text-center my-5">
-  <div class="row justify-content-center">
-    <div class="col-auto">
-      <div class="circular-image-container">
-       <img class="circular-image" src="{% static 'images/ebo.jpeg' %}" alt="Leonard Emelieze">
+
+
+   <div class="container my-5">
+
+  <div class="row align-items-center justify-content-center">
+
+    <!-- PHOTO -->
+    <div class="col-md-4 text-center">
+
+      <div class="circular-image-container mx-auto">
+        <img
+          class="circular-image"
+          src="{% static 'images/ebo.jpeg' %}"
+          alt="Leonard Emelieze">
+      </div>
+
+    </div>
+
+    <!-- INTRO -->
+    <div class="col-md-8 text-center text-md-start mt-4 mt-md-0">
+
+      <h1>Leonard E. Emelieze</h1>
+
+      <p class="tagline">
+        Full-Stack Python Developer | Seismologist |
+        Building data-driven web solutions that transform
+        complex scientific insights into scalable digital systems.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="{% url 'projects' %}"
+           class="btn btn-warning me-2">
+           View Projects
+        </a>
+
+        <a href="{% url 'contacts' %}"
+           class="btn btn-outline-light">
+           Hire Me
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+    <div class="mt-4 d-flex justify-content-center gap-3 flex-wrap">
+      <a
+        href="https://www.linkedin.com/in/lee-emelieze-a6a003180/"
+        target="_blank"
+      >
+        <img
+          src="{% static 'images/linkendin.png' %}"
+          alt="LinkedIn"
+          width="50"
+          height="50"
+          class="social_links"
+        />
+      </a>
+      <a href="https://www.youtube.com/@leonardemelieze8103" target="_blank">
+        <img
+          src="{% static 'images/you.png' %}"
+          alt="YouTube"
+          width="50"
+          height="50"
+          class="social_links"
+        />
+      </a>
+      <a href="https://www.instagram.com/mistaa_lee_/" target="_blank">
+        <img
+          src="{% static 'images/insta.jpg' %}"
+          alt="Instagram"
+          width="50"
+          height="50"
+          class="social_links"
+        />
+      </a>
     </div>
   </div>
 
-  <div class="mt-4">
-  
-    <h1>Leonard.E Emelieze</h1>
-   <p class="tagline">
-Full-Stack Python Developer | Seismologist | Building data-driven web solutions that transform complex scientific insights into scalable digital systems.
-</p>
-  </div>
-
-  <div class="mt-4 d-flex justify-content-center gap-3 flex-wrap">
-    <a href="https://www.linkedin.com/in/lee-emelieze-a6a003180/" target="_blank">
-      <img src="{% static 'images/linkendin.png' %}" alt="LinkedIn" width="50" height="50" class="social_links">
-    </a>
-    <a href="https://www.youtube.com/@leonardemelieze8103" target="_blank">
-      <img src="{% static 'images/you.png' %}" alt="YouTube" width="50" height="50" class="social_links">
-    </a>
-    <a href="https://www.instagram.com/mistaa_lee_/" target="_blank">
-      <img src="{% static 'images/insta.jpg' %}" alt="Instagram" width="50" height="50" class="social_links">
-    </a>
-  </div>
+  {% endblock content1 %}
 </div>
-
-{% endblock content1 %}
