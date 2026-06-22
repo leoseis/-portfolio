@@ -164,7 +164,12 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "changeme")
 DEBUG = True
 # ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 # ALLOWED_HOSTS = ["*"]
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", ".onrender.com"]
+ALLOWED_HOSTS = [
+    "portfolio-dwxh.onrender.com",
+    "leonardemelieze.com",
+    "www.leonardemelieze.com",
+    "127.0.0.1", "localhost",
+]
 
 STATIC_URL = 'static/'
 
