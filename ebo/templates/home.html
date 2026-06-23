@@ -150,6 +150,72 @@ body{
   }
 @media (max-width:768px){
 
+.social_links{
+    transition:all .3s ease;
+    border-radius:50%;
+}
+
+.social_links:hover{
+    transform:translateY(-8px) scale(1.1);
+    box-shadow:0 10px 25px rgba(13,110,253,.35);
+}
+
+
+.social-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    margin-top:40px;
+    margin-bottom:20px;
+}
+
+.social-icon{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:2rem;
+    transition:all .4s ease;
+}
+
+.linkedin{
+    color:#0A66C2;
+    border:2px solid #0A66C2;
+}
+
+.youtube{
+    color:#FF0000;
+    border:2px solid #FF0000;
+}
+
+.github{
+    color:#ffffff;
+    border:2px solid #ffffff;
+}
+
+.social-icon:hover{
+    transform:translateY(-10px) scale(1.1);
+    box-shadow:0 0 20px rgba(255,255,255,.3);
+}
+
+.linkedin:hover{
+    background:#0A66C2;
+    color:white;
+}
+
+.youtube:hover{
+    background:#FF0000;
+    color:white;
+}
+
+.github:hover{
+    background:#ffffff;
+    color:#000000;
+}
 
 .stats-section{
         flex-direction:column;
@@ -166,6 +232,16 @@ body{
     .stats-section div:last-child{
         border-bottom:none;
     }
+
+    .stats-section div{
+    transition:all .3s ease;
+    cursor:pointer;
+}
+
+.stats-section div:hover{
+    color:#f1c40f;
+    transform:translateY(-5px);
+}
 
     .hero-section{
         min-height:auto;
@@ -197,6 +273,37 @@ body{
     .hero-buttons a{
         width:100%;
     }
+
+    .circular-image-container{
+    animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        box-shadow:0 0 10px rgba(13,110,253,.4);
+    }
+
+    to{
+        box-shadow:0 0 25px rgba(13,110,253,.8);
+    }
+}
+
+
+.mt-4{
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 /* 
     .stats-section{
         flex-direction:column;
@@ -267,6 +374,21 @@ body{
     margin-top:40px;
 }
 
+
+.tech-badges{
+    margin:20px 0;
+}
+
+.tech-badges span{
+    display:inline-block;
+    background:#0d6efd;
+    color:white;
+    padding:8px 14px;
+    border-radius:20px;
+    margin:5px;
+    font-size:.9rem;
+}
+
 .stats-section{
     width:auto;
     min-width:900px;
@@ -289,6 +411,62 @@ body{
 
 .social-wrapper a{
     display:inline-block;
+}
+
+
+.social-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+.social-icon{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:2rem;
+    transition:all .3s ease;
+}
+
+.linkedin{
+    color:#0A66C2;
+    border:2px solid #0A66C2;
+}
+
+.youtube{
+    color:#FF0000;
+    border:2px solid #FF0000;
+}
+
+.github{
+    color:#ffffff;
+    border:2px solid #ffffff;
+}
+
+.social-icon:hover{
+    transform:translateY(-8px);
+}
+
+.linkedin:hover{
+    background:#0A66C2;
+    color:white;
+}
+
+.youtube:hover{
+    background:#FF0000;
+    color:white;
+}
+
+.github:hover{
+    background:white;
+    color:black;
 }
 
   
@@ -326,6 +504,17 @@ body{
         with modern software engineering.
       </p>
 
+
+      <div class="tech-badges">
+    <span>Django</span>
+    <span>React</span>
+    <span>React Native</span>
+    <span>PostgreSQL</span>
+    <span>Docker</span>
+    <span>Automation</span>
+    <span>AWS</span>
+</div>
+
       <div class="hero-buttons">
 
         <a href="{% url 'projects' %}"
@@ -353,23 +542,33 @@ body{
     </div>
 </div>
 
-<div class="social-wrapper">
+<!-- <div class="social-wrapper"> -->
     <!-- LinkedIn -->
     <!-- YouTube -->
     <!-- Instagram -->
+<!-- </div> -->
+<div class="social-container">
+
+    <a href="https://www.linkedin.com/in/lee-emelieze-a6a003180/"
+       target="_blank"
+       class="social-icon linkedin">
+        <i class="bi bi-linkedin"></i>
+    </a>
+
+    <a href="https://www.youtube.com/@leonardemelieze8103"
+       target="_blank"
+       class="social-icon youtube">
+        <i class="bi bi-youtube"></i>
+    </a>
+
+    <a href="https://github.com/leoseis"
+       target="_blank"
+       class="social-icon github">
+        <i class="bi bi-github"></i>
+    </a>
+
 </div>
-   <div class="social-wrapper">
-  <a href="https://www.linkedin.com/in/lee-emelieze-a6a003180/" target="_blank">
-    <img src="{% static 'images/linkendin.png' %}" alt="LinkedIn" width="50" height="50" class="social_links">
-  </a>
-
-  <a href="https://www.youtube.com/@leonardemelieze8103" target="_blank">
-    <img src="{% static 'images/you.png' %}" alt="YouTube" width="50" height="50" class="social_links">
-  </a>
-
-  <a href="https://www.instagram.com/mistaa_lee_/" target="_blank">
-    <img src="{% static 'images/insta.jpg' %}" alt="Instagram" width="50" height="50" class="social_links">
-  </a>
+</a>
 </div>
   </div>
 
