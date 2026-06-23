@@ -37,6 +37,10 @@
 body {
   background-image: url("../images/jul.PNG");
   background-repeat: no-repeat;
+   background:#020617;
+    color:white;
+    overflow-x:hidden;
+  
   /* background-size: cover; */
   /* background-position: center; */
 }
