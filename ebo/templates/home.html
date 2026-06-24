@@ -423,6 +423,26 @@ body{
     margin-bottom:40px;
 }
 
+.typing-container{
+    min-height:40px;
+    margin:15px 0;
+}
+
+#typing-text{
+    color:#f1c40f;
+    font-size:1.3rem;
+    font-weight:600;
+    border-right:3px solid #f1c40f;
+    padding-right:5px;
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{
+        border-color:transparent;
+    }
+}
+
 .social-icon{
     width:70px;
     height:70px;
@@ -494,6 +514,9 @@ body{
    <div class="col-md-8 text-center text-md-start mt-md-0 hero-card">
 
       <h1>Leonard E. Emelieze</h1>
+      <div class="typing-container">
+    <span id="typing-text"></span>
+</div>
 
       <p class="tagline">
      Full-Stack Python Developer | Django | React | React Native Developer 
@@ -571,6 +594,48 @@ body{
 </a>
 </div>
   </div>
+
+  <script>
+const roles = [
+    "Full-Stack Python Developer",
+    "Django & React Specialist",
+    "React Native Developer",
+    "Automation Engineer",
+    "Seismologist & Data Analyst"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+
+    const currentRole = roles[roleIndex];
+    const typingText = document.getElementById("typing-text");
+
+    if (isDeleting) {
+        typingText.textContent = currentRole.substring(0, charIndex--);
+    } else {
+        typingText.textContent = currentRole.substring(0, charIndex++);
+    }
+
+    let speed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentRole.length + 1) {
+        speed = 2000;
+        isDeleting = true;
+    }
+
+    if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+    }
+
+    setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+</script>
 
   {% endblock content1 %}
 
