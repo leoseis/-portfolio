@@ -23,9 +23,14 @@ def projects(request):
  'path': 'images/multi.png',
  'link': ' https://marketplace-connect.onrender.com/'},
 
-{'title': "CO2 Optimizer",
+{'title': "Seismic Monitoring Dashboard",
+ 'path': 'images/dashboard.png',
+ 'link':  'https://frontend-seismic-dashboard.vercel.app/'},
+
+ {'title': "CO2 Optimizer",
  'path': 'images/co2.png',
  'link': 'https://co2optimizer-sr2pucepayv3glalfrmxtv.streamlit.app/'},
+
 
 {'title': "Portfolio",
  'path': 'images/porto.PNG',
