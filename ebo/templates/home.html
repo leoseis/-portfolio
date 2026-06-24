@@ -436,7 +436,33 @@ body{
     padding-right:5px;
     animation:blink .8s infinite;
 }
+.portfolio-highlight{
+    max-width:900px;
+    margin:50px auto;
+    padding:40px;
+    text-align:center;
+    background:#111827;
+    border:1px solid rgba(241,196,15,.3);
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+}
 
+.portfolio-highlight h2{
+    color:#f1c40f;
+    margin-bottom:20px;
+}
+
+.portfolio-highlight p{
+    color:#dcdcdc;
+    font-size:1.1rem;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.portfolio-highlight .btn{
+    padding:12px 30px;
+    font-weight:bold;
+}
 @keyframes blink{
     50%{
         border-color:transparent;
@@ -570,6 +596,23 @@ body{
     <!-- YouTube -->
     <!-- Instagram -->
 <!-- </div> -->
+
+<section class="portfolio-highlight">
+
+    <h2>Building Scalable Solutions</h2>
+
+    <p>
+        From scientific data visualization dashboards to modern web and
+        mobile applications, I develop software that solves real-world
+        problems using Django, React, React Native and Python.
+    </p>
+
+    <a href="{% url 'projects' %}" class="btn btn-warning">
+        Explore My Work
+    </a>
+
+</section>
+
 <div class="social-container">
 
     <a href="https://www.linkedin.com/in/lee-emelieze-a6a003180/"
