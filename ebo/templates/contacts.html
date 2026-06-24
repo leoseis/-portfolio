@@ -3,7 +3,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
+
+  <link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -20,11 +25,10 @@
     width: 100%;
     max-width: 650px;
     background: #111827;
-    border: 1px solid rgba(241, 196, 15, .3);
+    border: 1px solid rgba(241,196,15,.3);
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 0 30px rgba(13, 110, 253, .15);
-    animation: fadeInUp .8s ease;
+    box-shadow: 0 0 30px rgba(13,110,253,.15);
 }
 
 @keyframes fadeInUp {
@@ -109,34 +113,98 @@ h2 {
     font-size: .95rem;
 }
 
-@media(max-width:768px){
+@media (max-width:768px){
 
     body{
-        padding:20px 10px;
+        padding:15px;
         align-items:flex-start;
     }
 
     .contact-wrapper{
-        padding:25px;
-        border-radius:15px;
+        width:100%;
+        max-width:100%;
+        padding:25px 18px;
+        margin-top:20px;
     }
+
+    h2{
+        font-size:1.8rem;
+    }
+
+    .contact-subtitle{
+        font-size:1rem;
+        line-height:1.6;
+    }
+
+    .contact-info{
+        display:flex;
+        flex-direction:column;
+        gap:8px;
+        text-align:center;
+    }
+
+    .form-control{
+        font-size:16px;
+    }
+
+    .btn-primary{
+        width:100%;
+    }
+}
+
+  .contact-wrapper {
+    width: 90%;
+    max-width: 650px;
+    background: #111827;
+  }
 
     h2{
         font-size:2rem;
     }
 
+    .contact-subtitle{
+        font-size:.95rem;
+        line-height:1.6;
+    }
+
     .contact-info{
         flex-direction:column;
+        gap:8px;
         text-align:center;
-        gap:10px;
     }
-}
+
+
+  
+
+    h2{
+        font-size:1.8rem;
+    }
+
+
+    .form-control{
+        padding:14px;
+        font-size:16px; /* prevents zoom on iPhone */
+    }
+
+    textarea.form-control{
+        min-height:140px;
+    }
+
+    .btn-primary{
+        padding:15px;
+        font-size:1rem;
+    }
+
   </style>
 </head>
 <body>
 
 <div class="contact-wrapper">
-  <h2>Contact Us</h2>
+  
+  <div class="text-center mb-3">
+    <i class="bi bi-envelope-paper-heart-fill fs-1 text-warning"></i>
+<h2>Let's Work Together</h2>
+</div>
   <p class="contact-subtitle">
     Let's discuss your next project, freelance opportunity or collaboration.
 </p>
