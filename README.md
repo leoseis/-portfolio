@@ -80,7 +80,7 @@ A platform for analyzing seismic datasets
 
 ### 💼 Portfolio Website
 My personal developer portfolio  
-🔗 https://portfolio-dwxh.onrender.com  
+🔗 https://leonardemelieze.com
 
 ---
 
