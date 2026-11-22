@@ -39,8 +39,8 @@ jobs:
           DEBUG: "True"
         run: python manage.py check
 
-      - name: Run Django tests
+      - name: Run pytest
         env:
           SECRET_KEY: ci-test-secret-key
           DEBUG: "True"
-        run: python manage.py test
+        run: python -m pytest -v
