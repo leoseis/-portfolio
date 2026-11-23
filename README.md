@@ -26,16 +26,19 @@ My background in seismic data analysis gives me a strong edge in:
 - Django
 - Django REST Framework
 
+
 ### 🎨 Frontend
 - React
 - JavaScript
 - HTML5
 - CSS3
 - Bootstrap
+- Reactnative 
 
 ### 🗄 Database
 - PostgreSQL
 - SQLite
+-SQL
 
 ### ⚙️ Tools
 - Git & GitHub
